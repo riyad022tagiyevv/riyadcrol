@@ -8,15 +8,15 @@
         "video stream",
         "pyrogram"
     ],
-    "website": "https://t.me/Nexus_Bots",
+    "website": "https://t.me/RiyaddBlogg",
     "repository": "https://github.com/Aliyevdii/Nexua_Game",
     "success_url": "https://t.me/dA_l_i_y_e_v_d_i",
     "env": {
-        "API_ID": {
+        "API_ID": "12878302"
             "description": "API_ID'niz my.telegram.org",
             "required": true
         },
-        "API_HASH": {
+        "API_HASH": "1ce756e879790d465304f48c36294883"
             "description": "API_HASH'iniz içinm my.telegram.org",
             "required": true
         }
