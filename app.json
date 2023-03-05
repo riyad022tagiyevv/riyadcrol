@@ -12,11 +12,11 @@
     "repository": "https://github.com/Aliyevdii/Nexua_Game",
     "success_url": "https://t.me/dA_l_i_y_e_v_d_i",
     "env": {
-        "API_ID": "12878302"
+        "API_ID": {
             "description": "API_ID'niz my.telegram.org",
             "required": true
         },
-        "API_HASH": "1ce756e879790d465304f48c36294883"
+        "API_HASH": {
             "description": "API_HASH'iniz içinm my.telegram.org",
             "required": true
         }
