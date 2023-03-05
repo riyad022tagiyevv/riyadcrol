@@ -38,9 +38,9 @@ def setup_logger():
 
 def help(update, context):
     update.message.reply_text('Mövcud əmrlər:\n' +
-                              '/basla - Yeni oyun başladmaq\n' +
+                              '/game - Yeni oyun başladmaq\n' +
                               '/master - Aparıcı olmaq\n' +
-                              '/rating - Qrup üzrə reytinq', reply_to_message_id=True)
+                              '/reytinq - Qrup üzrə reytinq', reply_to_message_id=True)
 
 
 def button(update, context):
@@ -66,10 +66,10 @@ def button(update, context):
 def command_start(update, context: CallbackContext):
     if update.effective_chat.type == "private":
         
-        addme = InlineKeyboardButton(text="🤓 Məni Guruonuza Əlavə Edin", url="https://t.me/BSsozoyunbot?startgroup=a")
-        sohbet = InlineKeyboardButton(text="⚕️ Support", url="https://t.me/BLACK_MMC")
-        oyun = InlineKeyboardButton(text="🐈 Söhbət Gurupmuz", url="https://t.me/Cat_House_Gurups")
-        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahib", url="https://t.me/F_r_o_z_e_d_i")
+        addme = InlineKeyboardButton(text="🤓 Məni Guruonuza Əlavə Edin", url="https://t.me/N1CroBot?startgroup=a")
+        sohbet = InlineKeyboardButton(text="⚕️ Support", url="https://t.me/RiyaddBlogg")
+        oyun = InlineKeyboardButton(text="🐈 Söhbət Gurupmuz", url="https://t.me/no1qrup")
+        admin = InlineKeyboardButton(text="👨🏻‍💻 Sahib", url="https://t.me/RiyadAndMe")
 
         keyboard = [[addme],[sohbet],[oyun],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -79,7 +79,7 @@ def command_start(update, context: CallbackContext):
         user_id = update.message.from_user.id
         username = update.message.from_user.full_name
 
-        logger.info('Got command /basla,'
+        logger.info('Got command /game,'
                     'chat_id={},'
                     'user_id'.format(chat_id,
                                      user_id))
@@ -186,7 +186,7 @@ def command_rating(update, context):
 
     rating_str = game.get_str_rating()
 
-    logger.info('Got command /rating,'
+    logger.info('Got command /reytinq,'
                 'chat_id={},'
                 'rating={}'.format(update.message.chat.id,
                                    rating_str))
@@ -233,11 +233,11 @@ def main():
 
     dp = updater.dispatcher
 
-    dp.add_handler(CommandHandler("basla", command_start))
+    dp.add_handler(CommandHandler("game", command_start))
     dp.add_handler(CommandHandler("master", command_master))
     dp.add_handler(CommandHandler("show_word", command_show_word))
     dp.add_handler(CommandHandler("change_word", command_change_word))
-    dp.add_handler(CommandHandler("rating", command_rating))
+    dp.add_handler(CommandHandler("reytinq", command_rating))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("start", command_start))
 
